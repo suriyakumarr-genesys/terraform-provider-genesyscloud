@@ -268,7 +268,6 @@ func TestAccResourceIntegrationAction(t *testing.T) {
 				),
 			},
 			{
-				PreConfig: func() { time.Sleep(10 * time.Second) },
 				// Import/Read
 				ResourceName:      "genesyscloud_integration_action." + actionResourceLabel1,
 				ImportState:       true,
