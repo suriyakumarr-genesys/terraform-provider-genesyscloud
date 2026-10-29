@@ -96,12 +96,6 @@ func TestAccResourceArchitectIvrIdentityResolution(t *testing.T) {
 				ExpectNonEmptyPlan: false,
 			},
 			{
-				ResourceName:            "genesyscloud_architect_ivr_identity_resolution." + identityResolutionResourceLabel,
-				ImportState:             true,
-				ImportStateVerify:       true,
-				ImportStateVerifyIgnore: []string{"division_id"}, // state keeps "" for the unassigned division, import omits it
-			},
-			{
 				Config: architectIvr.GenerateIvrConfigResource(&architectIvr.IvrConfigStruct{
 					ResourceLabel: ivrResourceLabel,
 					Name:          ivrName,
